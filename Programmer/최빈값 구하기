@@ -1,0 +1,55 @@
+내 코드
+import java.util.Arrays;
+
+class Solution {
+    public int solution(int[] array) {
+        Arrays.sort(array);
+        int answer = 0;
+        int[] index = new int[1001];
+        int cnt = 0;
+        
+        for(int i=0; i<array.length; i++){
+           index[array[i]]++;
+           }
+        
+        for(int i=0; i<index.length; i++){
+            if(index[i]> answer){
+                answer = index[i];
+
+             }
+        }
+        
+        for(int i=0; i<index.length-1; i++){
+            if(answer == index[i+1]){
+                 cnt ++;
+            }
+        }
+        if(cnt >= 2){
+            answer = -1;
+        }
+        return answer;
+    }
+}
+=== 실패
+
+다른사람 코드
+import java.util.*;
+class Solution {
+    public int solution(int[] array) {
+        int maxCount = 0;
+        int answer = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int number : array){
+            int count = map.getOrDefault(number, 0) + 1;
+            if(count > maxCount){
+                maxCount = count;
+                answer = number;
+            }
+            else  if(count == maxCount){
+                answer = -1;
+            }
+            map.put(number, count);
+        }
+        return answer;
+    }
+}
