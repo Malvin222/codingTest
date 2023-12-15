@@ -1,0 +1,46 @@
+머쓱이는 친구에게 모스부호를 이용한 편지를 받았습니다. 
+그냥은 읽을 수 없어 이를 해독하는 프로그램을 만들려고 합니다. 
+문자열 letter가 매개변수로 주어질 때, letter를 영어 소문자로 바꾼 문자열을 return 하도록 solution 함수를 완성해보세요.
+모스부호는 다음과 같습니다.
+
+morse = { 
+    '.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f',
+    '--.':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l',
+    '--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r',
+    '...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x',
+    '-.--':'y','--..':'z'
+}
+
+class Solution {
+    public String solution(String letter) {
+        String answer = "";
+        answer = letter .replace(".-..","l")
+                        .replace(".--.","p")
+                        .replace("-...","b")
+                        .replace("-.-.","c")
+                        .replace("..-.","f")
+                        .replace("....","h")
+                        .replace(".---","j")
+                        .replace("--.-","q")
+                        .replace("-..-","x")
+                        .replace("-.--","y")
+                        .replace("--..","z")
+                        .replace("...-","v")
+                        .replace("---","o")
+                        .replace("-..","d")
+                        .replace("-.-","k")
+                        .replace("--.","g")
+                        .replace(".-.","r")
+                        .replace("...","s")
+                        .replace(".--","w")
+                        .replace("..-","u")
+                        .replace(".-","a")
+                        .replace("..","i")
+                        .replace("--","m")
+                        .replace("-.","n")
+                        .replace("-","t")
+                        .replace(".","e")
+                        .replace(" ","");
+        return answer;
+    }
+}
