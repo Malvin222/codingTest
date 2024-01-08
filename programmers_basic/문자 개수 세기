@@ -1,0 +1,46 @@
+문제 설명
+알파벳 대소문자로만 이루어진 문자열 my_string이 주어질 때,
+my_string에서 'A'의 개수, my_string에서 'B'의 개수,..., my_string에서 'Z'의 개수, my_string에서 'a'의 개수, my_string에서 'b'의 개수,..., my_string에서 'z'의 개수를 
+순서대로 담은 길이 52의 정수 배열을 return 하는 solution 함수를 작성해 주세요.
+입출력 예
+my_string	result
+"Programmers"	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0]
+class Solution {
+    public int[] solution(String my_string) {
+        int[] answer = new int[52]; 
+        int cnt = 0;
+
+        for (int i = 0; i < my_string.length(); i++) {
+            char currentChar = my_string.charAt(i);
+
+            for (int j = 'A'; j <= 'Z'; j++) {
+                if (currentChar == j) {
+                    answer[j - 'A']++;  
+                }
+            }
+
+            for (int j = 'a'; j <= 'z'; j++) {
+                if (currentChar == j) {
+                    answer[j - 'a' + 26]++;  
+                }
+            }
+        }
+
+        return answer;
+    }
+}
+
+====================
+class Solution {
+    public int[] solution(String my_string) {
+        int[] answer = new int[52];
+        for(int i = 0; i < my_string.length(); i++){
+            char c = my_string.charAt(i);
+            if(c >= 'a')
+                answer[c - 'a' + 26]++;
+            else
+                answer[c - 'A']++;
+        }
+        return answer;
+    }
+}
