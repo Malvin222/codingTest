@@ -1,0 +1,22 @@
+문제 설명
+단어가 공백 한 개 이상으로 구분되어 있는 문자열 my_string이 매개변수로 주어질 때, my_string에 나온 단어를 앞에서부터 순서대로 담은 문자열 배열을 return 하는 solution 함수를 작성해 주세요.
+입출력 예
+my_string	result
+" i    love  you"	["i", "love", "you"]
+"    programmers  "	["programmers"]
+class Solution {
+    public String[] solution(String my_string) {
+        my_string = my_string.replaceAll("\\s+", " ");
+        if(my_string.charAt(0)==' '){
+            my_string= my_string.substring(1);
+        }
+        String[] answer = my_string.split(" ");
+        return answer;
+    }
+}
+========================
+class Solution {
+    public String[] solution(String my_string) {
+        return my_string.trim().split("[ ]+");
+    }
+}
