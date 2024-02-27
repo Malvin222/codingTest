@@ -1,0 +1,50 @@
+파이썬의 딕셔너리 와 비슷한 친구를 Hash map이라고 생각해주면 될 것 같다!
+  즉, key-value로 데이터에 접근할 수 있는 강력한 툴이다.
+  
+  값 추가 주의 점 : HashMap의 경우 저장공간보다 추가적으로 데이터가 들어오면 파이썬의 리스트처럼 공간을 늘리기는 하지만, 한 번에 약 2배로 늘리기 때문에 여기에서 과부하가 많이 발생한다고 한다!
+  따라서, 저장할 데이터의 개수를 알고 있다면, 미리 용량을 설정해주자 : )
+
+/*HashMap 선언*/
+HashMap<Integer, Integer> map1 = new HashMap<Integer, Integer>(); // key와 value가 전부 integer 
+HashMap<Integer, Integer> map1 = new HashMap<>(); //new에서 타입 파라미터 생략 가능
+HashMap<Integer, Integer> map1 = new HashMap<>(10); // 초기 크기 설정 가능 
+HashMap<String, String> map2 = new HashMap<>(){{
+	put("key1", "value1");
+    put("key2", "value2");
+}}; //초기 값 설정
+
+/*값 추가*/
+HashMap<Integer, String> num_map = new HashMap<Integer, String>();
+num_map.put(1, "one");
+num_map.put(2, "two);
+
+/*값 삭제*/
+HashMap<Integer, String> num_map = new HashMap<Integer, String>(){{
+	put(1,"One");
+    put(2,"Two");
+    }};
+num_map.remove(2); // key값 2 제거 (오직 키 값으로만 제거 가능)
+num_map.clear(); 
+
+/*값 출력*/
+HashMap<Integer, String> num_map = new HashMap<Integer, String>(){{
+	put(1,"One");
+    put(2,"Two");
+    }};
+System.out.println(num_map); // 전체 출력
+System.out.println(num_map.get(1)); // key값이 1인 value 출력 
+
+
+//entrySet을 활용한 출력 -- key, value 모두 필요할 때
+for(Entry<Integer, String> entry: num_map.entrySet())
+{
+	System.out.println("[Key]= " + entry.getKey() + "[Value]= " + entry.getValue());
+ }   
+ 
+ //KeySet을 활용한 출력 -- key 값만 필요할 때 
+//물론 keySet을 사용하더라도 value까지 추출이 가능하지만 시간 복잡도가 증가하므로 value까지 필요하다면 entrySet을 사용하자!
+ for(Integer i: num_map.keySet()){
+ 	System.out.println("[Key]= "+i + "[Value]= "+ num_map.get(i));
+    }
+
+num_map.containsKey(2); //특정 키 포함 여부
