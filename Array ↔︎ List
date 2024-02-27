@@ -1,0 +1,17 @@
+코딩테스트를 풀이할 때, 리턴 타입이 정해져있는 경우에 형 변환이 거의 필수적이므로 알아두자!
+
+/* 문자열 배열 -> List */
+String[] tmp = "abcde";
+List<String> list = new ArrayList<>(Arrays.asList(tmp));
+
+/* List -> 문자열 배열 */
+List<String> list = new ArrayList<>();
+String[] tmp = list.toArray(new String[list.size()]));
+
+/* 정수 배열 -> List */
+int[] tmp = {123, 1222, 563, 7531};
+List<Integer> list = new ArrayList<>(Arrays.asList(tmp));
+
+/* List -> 정수 배열 */
+List<Integer> list = new ArrayList<>();
+int[] tmp = list.stream().mapToInt(i->i).toArray(); 
