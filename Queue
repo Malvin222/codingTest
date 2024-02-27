@@ -1,0 +1,32 @@
+줄을 지어 기다리는 것처럼 처리되는 자료구조 즉, FIFO(First In First Out)
+
+
+/*Queue 생성*/
+Queue<Integer> queue = new LinkedList<>();
+Queue<String> s_queue = new LinkedList<>();
+
+/*add 과정*/
+queue.add(1);
+s_queue.add("wtf");
+queue.offer(3);
+
+/*꺼내기*/
+int num1 = queue.poll();
+String line = s_queue.poll();
+
+/*queue의 첫번째로 들어간 값 참조*/
+queue.peek();
+
+/*priority queue 선언*/
+PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(); //int형 priorityQueue 선언 (우선순위가 낮은 숫자 순)
+PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder()); //int형 priorityQueue 선언 (우선순위가 높은 숫자 순)
+
+/*priority queue 값 추가 및 제거 */
+priorityQueue.add(3);
+priorityQueue.offer(2);
+---
+priorityQueue.poll();
+priorityQueue.remove();
+
+/*priorityQueue에서 가장 우선 순위가 높은 값 출력*/
+priorityQueue.peek();
