@@ -1,0 +1,11 @@
+import java.util.Stack;
+
+사용
+Stack<Character> stack = new Stack<>();
+
+stack.push(" ")  -> 스택에 담기
+stack.pop() -> 스택에서 빼기
+후입 선출( 나중에 담긴 데이터가 먼저 나옴)
+
+stack.isEmpty() -> 빈스택인지 확인
+stack.size() -> 스택 사이즈
