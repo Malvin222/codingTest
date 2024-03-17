@@ -1,0 +1,4 @@
+Integer.toBinaryString(n);
+이진수로 변환 
+Integer.bitCount(n) 
+Integer형 타입의 숫자 데이터의 비트데이터(2진데이터이며 binary데이터)중 1 비트의 수를 카운트
