@@ -66,3 +66,10 @@ Integer.toString(320) // 숫자 -> 문자열로 변환 : 출력 "320"
 String str = "hello";
 String str = new StringBuilder(str).reverse().toString(); 
 //출력 : olleh
+
+
+/* 문자열 char배열로 변환*/
+toCharArray();
+
+String text = "abcd";
+char[] charAry = text.toCharArray(); //[a],[b],[c],[d]
